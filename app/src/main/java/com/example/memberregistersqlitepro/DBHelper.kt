@@ -118,7 +118,7 @@ class DBHelper(val context: Context?, val name: String?, val version: Int) :
     fun selectAll(): MutableList<Member>? {
         val db: SQLiteDatabase = this.readableDatabase
         var cursor: Cursor? = null
-        val mutableList: MutableList<Member>? = null
+        val mutableList: MutableList<Member>? = mutableListOf<Member>()
         try {
             cursor = db.rawQuery("select * from memberTBL", null)
             if (cursor.count >= 1) {

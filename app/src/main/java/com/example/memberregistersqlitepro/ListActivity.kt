@@ -9,21 +9,24 @@ import com.example.memberregistersqlitepro.databinding.ActivityListBinding
 
 class ListActivity : AppCompatActivity() {
     val binding by lazy { ActivityListBinding.inflate(layoutInflater) }
-    lateinit var data: MutableList<Member>
+    lateinit var listAdapter: ListAdapter
+    var mutableList: MutableList<Member> = mutableListOf()
+    lateinit var dbHelper: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val LinearLayoutManager = ListAdapter(data)
-        binding.recyclerView.adapter = LinearLayoutManager
+        dbHelper = DBHelper(applicationContext, MainActivity.DB_NAME, MainActivity.VERSION)
+        mutableList = dbHelper.selectAll()!!
+        listAdapter = ListAdapter(mutableList)
+        binding.recyclerView.adapter = listAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.setHasFixedSize(true)
 
         binding.btnMain.setOnClickListener {
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
-
     }
 }
