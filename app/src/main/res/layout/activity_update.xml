@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".UpdateActivity">
+
+    <EditText
+        android:id="@+id/edtUpdateId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="ID 입력"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/btnSearchId"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSearchId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickView"
+        android:text="ID검색"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/edtUpdateId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edtUpdateId"
+        app:layout_constraintTop_toTopOf="@+id/edtUpdateId" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원정보수정"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtPhone2"
+        app:layout_constraintEnd_toEndOf="@+id/edtPhone2"
+        app:layout_constraintStart_toStartOf="@+id/edtPhone2"
+        app:layout_constraintTop_toBottomOf="@+id/edtUpdateId" />
+
+    <EditText
+        android:id="@+id/edtPhone2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:focusableInTouchMode="false"
+        android:hint="Phone"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/edtName2"
+        app:layout_constraintEnd_toEndOf="@+id/edtName2"
+        app:layout_constraintStart_toStartOf="@+id/edtName2"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/edtName2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/edtLevel2"
+        app:layout_constraintEnd_toEndOf="@+id/edtLevel2"
+        app:layout_constraintStart_toStartOf="@+id/edtLevel2"
+        app:layout_constraintTop_toBottomOf="@+id/edtPhone2" />
+
+    <EditText
+        android:id="@+id/edtLevel2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="level"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
+        app:layout_constraintEnd_toEndOf="@+id/btnUpdate"
+        app:layout_constraintStart_toStartOf="@+id/btnUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/edtName2" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickView"
+        android:text="회원정보수정"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/btnMain"
+        app:layout_constraintEnd_toEndOf="@+id/btnMain"
+        app:layout_constraintStart_toStartOf="@+id/btnMain"
+        app:layout_constraintTop_toBottomOf="@+id/edtLevel2" />
+
+    <Button
+        android:id="@+id/btnMain"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickView"
+        android:text="메인화면"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
+</androidx.constraintlayout.widget.ConstraintLayout>
